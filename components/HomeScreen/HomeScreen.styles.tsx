@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginVertical: 15,
   },
-
   todaysSpecialContainer: {
     padding: 20,
   },
@@ -54,31 +53,6 @@ const styles = StyleSheet.create({
   },
   refreshButton: {
     padding: 10,
-  },
-  recipeCard: {
-    width: 400,
-    marginRight: 15,
-    borderRadius: 10,
-    overflow: 'hidden',
-    backgroundColor: '#f9f9f9',
-    marginBottom: 30,
-  },
-  recipeImage: {
-    width: '100%',
-    height: 150,
-    resizeMode: 'cover',
-  },
-  recipeTextContainer: {
-    padding: 10,
-  },
-  recipeTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  recipeDescription: {
-    fontSize: 14,
-    color: 'gray',
   },
   errorText: {
     color: 'red',

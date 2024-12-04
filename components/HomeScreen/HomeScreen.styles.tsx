@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'gray',
   },
-
   searchInput: {
     flex: 1,
     backgroundColor: '#f1f1f1',
@@ -91,9 +90,6 @@ const styles = StyleSheet.create({
     color: 'gray',
     marginTop: 20,
   },
-  recipeList: {
-    paddingBottom: 20,
-  },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -108,20 +104,6 @@ const styles = StyleSheet.create({
   seeAllButtonText: {
     color: '#ed5a15',
     fontWeight: 'bold',
-  },
-  recipeMetaContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 10,
-  },
-  recipeMetaItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  recipeMetaText: {
-    marginLeft: 5,
-    fontSize: 12,
-    color: 'gray',
   },
   modalContainer: {
     flex: 1,

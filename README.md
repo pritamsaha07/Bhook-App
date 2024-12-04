@@ -1,79 +1,106 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Development Environment Setup Guide
 
-# Getting Started
+## Prerequisites
+- Windows 10 or 11 (64-bit)
+- Administrative access to your computer
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
-
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
+## 1. Install Chocolatey (Package Manager)
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+# Open PowerShell as Administrator
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
+## 2. Install Node.js and Node Version Manager
 ```bash
-# using npm
-npm run android
+# Install Node.js LTS
+choco install nodejs-lts
 
-# OR using Yarn
-yarn android
+# Verify installations
+node --version
+npm --version
 ```
 
-### For iOS
-
+## 3. Install React Native CLI
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+npm install -g react-native-cli
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## 4. Environment Variables Setup
+1. Open System Properties > Advanced > Environment Variables
+2. Create/Edit PATH to include:
+   - Node.js installation path
+   - npm global modules path
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+### Example Environment Variables
+```
+ANDROID_HOME = C:\Users\YourUsername\AppData\Local\Android\Sdk
+```
 
-## Step 3: Modifying your App
+## 5. Install Android Studio
+1. Download from official Android Studio website
+2. During installation, ensure you select:
+   - Android SDK
+   - Android SDK Platform
+   - Android Virtual Device
+   - Performance (Intel ® HAXM)
+   - Android SDK Build-Tools
 
-Now that you have successfully run the app, let's modify it.
+## 6. Android SDK Configuration
+1. Open Android Studio
+2. Go to Tools > SDK Manager
+3. Select and install:
+   - Latest Android SDK
+   - Android SDK Platform
+   - Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+## 7. Git Clone and Project Setup
+```bash
+# Clone your project repository
+git clone https://repository-url.git
 
-You've successfully run and modified your React Native App. :partying_face:
+# Install dependencies
+npm install
 
-### Now what?
+# For Android setup
+npx react-native run-android
+```
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## Troubleshooting
+- Ensure all paths are correctly set
+- Check Java JDK version compatibility
+- Verify Android SDK and build tools versions
 
-# Troubleshooting
+## Recommended Extensions
+- VS Code React Native Tools
+- ESLint
+- Prettier
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
 
-To learn more about React Native, take a look at the following resources:
+# Design Decisions
+- Used TypeScript for type safety
+- Implemented Zustand for state management
+- Created reusable components and hooks
+- Use constants for mock data and configurations
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+## Key Challenges
+
+### 1. Environment Configuration
+- Complex manual SDK setup
+- Multiple dependencies
+- Intricate environment variable configuration
+- Loss of Expo's simplified development environment
+
+
+## Vector Icons Integration Issues
+
+
+- Complex manual font linking
+- Platform-specific configuration complexities
+- Custom icon management difficulties

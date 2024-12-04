@@ -85,7 +85,7 @@ npx react-native run-android
 - Used TypeScript for type safety
 - Implemented Zustand for state management
 - Created reusable components and hooks
-- Use constants for mock data and configurations
+- Used separate constants file for type configurations
 
 
 
